@@ -10,4 +10,10 @@ export class AuthController {
         const {email,password} = body;
         return this.authService.register(email,password)
     }
+
+    @Post('login')
+    async login(@Body() body: {email:string, password:string}){
+        const {email,password} = body;
+        return this.authService.login(email,password);
+    }
 }
